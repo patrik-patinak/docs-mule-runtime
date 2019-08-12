@@ -219,7 +219,7 @@ To split a comma-separated string of messages separated into separate messages, 
 %dw 1.0
 %output application/java
 payload splitBy ','
-____
+----
 
 [[enqueuing]]
 === Schedule the Logical Enqueuing of a Message
@@ -329,7 +329,7 @@ In some circumstances, the underlying library used by the connector might regula
 ----
 <!-- Recommended for packages not belonging to Mule -->
 <AsyncLogger name="com.microsoft.azure.servicebus" level="ERROR"/>
-____
+----
 
 * Add a *RegexFilter* to the existing appender (that is, RollingFile):
 
@@ -337,7 +337,7 @@ ____
 ----
 <!-- Avoids the log of messages that contain the specified regexp -->
 <RegexFilter regex = ".message to filter.*" onMatch="DENY" onMismatch="ACCEPT"/>
-____
+----
 
 IMPORTANT: If the message is multiline, *RegexFilter* might not work correctly.
 
